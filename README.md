@@ -8,7 +8,8 @@ I chose **The "Notebook" - Multi-File Markdown Editor**. This project allows use
 - **Vite (v7.3.1)**: For fast build times and simple project setup.  
 - **CodeMirror 6 (@uiw/react-codemirror)**: Provides a lightweight, robust Markdown editor with syntax highlighting.  
 - **ReactMarkdown**: For rendering Markdown content in the live preview panel.  
-- **LocalStorage**: For persistent storage of notes directly in the browser without a backend.  
+- **LocalStorage**: For persistent storage of notes directly in the browser without a backend.
+- **ChatGPT (GPT-5-mini)**: Used for guidance to structure feature requirements, plan logic for file naming, responsive layout, and other behaviors. This demonstrates effective use of an LLM to assist software design and problem solving.
 
 These tools allow the app to run entirely in the browser, providing a smooth, interactive experience without needing a server.
 
