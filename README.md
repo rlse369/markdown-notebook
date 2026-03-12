@@ -79,4 +79,4 @@ Vercel (recommended):
 4. Editing file names: Initially, file names edited on single click, which conflicted with selecting a file. Solved by enabling double-click to edit and single-click to select.
 
 ## Deployment URL
-https://markdown-notebook-kohl.vercel.app?_vercel_share=Gi3vyAzeVXQfodp9IaS6lP6494f9virN
+https://markdown-notebook-kohl.vercel.app
