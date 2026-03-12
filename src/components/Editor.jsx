@@ -1,14 +1,24 @@
-function Editor({ content, updateNote }) {
+import React from "react";
+import CodeMirror from "@uiw/react-codemirror";
+import { markdown } from "@codemirror/lang-markdown";
+import { EditorView } from "@codemirror/view";
 
-  if (!content) return <div className="panel">Select a note</div>
-
+const Editor = ({ file, updateContent }) => {
+  if (!file) return <div className="empty-state">No file selected</div>;
   return (
-    <textarea
-      className="panel editor"
-      value={content}
-      onChange={(e) => updateNote(e.target.value)}
-    />
-  )
-}
+    <div className="editor">
+      <CodeMirror
+        value={file.content}
+        height="100%"
+        extensions={[markdown()]}
+        onChange={(value) => updateContent(file.id, value)}
+        theme={EditorView.theme({
+          "&": { color: "#1a1a1a", backgroundColor: "#fff" },
+          ".cm-content": { caretColor: "#000" },
+        })}
+      />
+    </div>
+  );
+};
 
-export default Editor
+export default Editor;

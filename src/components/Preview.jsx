@@ -1,17 +1,18 @@
-import ReactMarkdown from "react-markdown"
-import remarkGfm from "remark-gfm"
+import React from "react";
+import ReactMarkdown from "react-markdown";
 
-function Preview({ content }) {
+const Preview = ({ file }) => {
+  if (!file) return <div className="empty-state">No file selected</div>;
 
-  if (!content) return <div className="panel">Preview</div>
+  // Convert all newlines to <br /> in ReactMarkdown
+  const contentWithBreaks = file.content.split("\n").map((line, index) => (
+    <React.Fragment key={index}>
+      {line}
+      <br />
+    </React.Fragment>
+  ));
 
-  return (
-    <div className="panel preview">
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>
-        {content}
-      </ReactMarkdown>
-    </div>
-  )
-}
+  return <div className="preview">{contentWithBreaks}</div>;
+};
 
-export default Preview
+export default Preview;
